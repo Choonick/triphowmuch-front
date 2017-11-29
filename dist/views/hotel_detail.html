@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="styles/spot_detail.0594d73d.css"/>
+<!-- 요소 -->
+<div id="spotSpace">
+  <!-- 여행지 사진 영역 -->
+  <div id="travelImageSpace">
+    <!-- 아이템 원 -->
+    <div class="itemCircle">
+      <!-- 체크표시 -->
+      <img class="checkCircle" src="images/check(blue).png">
+    </div>
+    <!-- 아이템 원 끝 -->
+    <!-- 이미지 영역 -->
+    <div id="imageSpace">
+      <img src="{{detail.firstimage}}">
+    </div>
+    <!-- 이미지 영역 끝 -->
+  </div>
+  <!-- 여행지 사진 영역 끝 -->
+  <!-- 여행지 상세정보 영역 -->
+  <!--<div id="detailSpace" style="overflow: auto;height: 50%">-->
+    <!-- 제목 영역 -->
+    <div id="titleSpace">
+      <p id="title">{{detail.title}}
+    </div>
+
+    <div id="contentSpace">
+      <div id="moneySpace" style="height: 10%">
+        <div class="contentNameSpace">
+          <button type="button">가격</button>
+        </div>
+        <div class="contentValueSpace">
+          <img src="../images/won.3a176151.png">
+          <p id="itemText">{{detail.price}}</p>
+        </div>
+      </div>
+
+      <!--<div class="whiteSpace"></div>-->
+
+      <div id="addressSpace" style="height: 10%">
+        <div class="contentNameSpace" >
+          <button type="button">주소</button>
+        </div>
+        <div class="contentValueSpace" >
+          <p class="value">{{detail.addr1}} {{detail.addr2}}</p>
+        </div>
+      </div>
+
+
+
+      <div id="infoSpace" style="height: 10%">
+        <div class="contentNameSpace">
+          <button type="button">정보</button>
+        </div>
+        <div class="contentValueSpace" >
+          <p class="value">{{detail.overview}}</p>
+        </div>
+      </div>
+
+      <div class="whiteSpace"></div>
+
+
+    </div>
+    <!-- 내용 영역 끝 -->
+  </div>
+  <!-- 여행지 상세정보 영역 끝 -->
+<!--</div>-->

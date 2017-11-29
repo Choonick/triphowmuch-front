@@ -1,0 +1,486 @@
+@font-face {
+  font-family: 'KoPubDotumLight';
+  src: url('../font/KoPubDotumLight.eot?#iefix') format('embedded-opentype'),  url('../font/KoPubDotumLight.woff') format('woff'), url('../font/KoPubDotumLight.ttf')  format('truetype'), url('../font/KoPubDotumLight.svg#KoPubDotumLight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NanumBarunGothic';
+  src: url('../font/NanumBarunGothic.eot?#iefix') format('embedded-opentype'),  url('../font/NanumBarunGothic.woff') format('woff'), url('../font/NanumBarunGothic.ttf')  format('truetype'), url('../font/NanumBarunGothic.svg#NanumBarunGothic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    list-style: none;
+}
+html, body{width:100%; height:100%; padding:0px; margin:0px;}
+body{
+    font-family: 'KoPubDotumLight' !important;
+    font-family: 'NanumBarunGothic' !important;
+}
+
+/* 요소 */
+#wrapper{
+    width: 100%;
+    height: 100%;
+}
+
+/* 상위 바 영역 */
+#topBar{
+    width: 100%;
+    height: 6.6%;
+    position: fixed;
+    background-color: #45b8d5;
+    z-index: 100;
+    color: #ffffff;
+}
+/* 내용 영역 */
+#bottom{
+    position: absolute;
+    top: 6.6%;
+    width: 100%;
+    height: 93.4%;
+}
+/* 왼쪽 공백 영역 */
+#whiteSpaceLeft{
+    display: inline-block;
+    width: 22.5%;
+    height: 100%;
+    float: left;
+}
+/* 콘텐츠 영역 */
+#content{
+    display: inline-block;
+    width: 55%;
+    height: 100%;
+    float: left;
+}
+/* 오른쪽 공백 영역 */
+/*#whiteSpaceRight{*/
+    /*display: inline-block;*/
+    /*width: 22.5%;*/
+    /*height: 100%;*/
+    /*float: left;*/
+/*}*/
+
+/* 로고 영역 */
+.logo_spot{
+    margin-left: 21.8%;
+    margin-top: 1%;
+    margin-bottom: 90%;
+    width: auto;
+    height: 62.5%;
+    display: inline-block;
+}
+/* 로고 이미지 */
+.logoImage{
+    width: auto;
+    height: 100%;
+}
+/* 저장된 여행지 영역 */
+.savedSpot{
+    font-size: 0px;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+    display: inline-block;
+    margin-left: 27.0%;
+    margin-top: 1.8%;
+    margin-bottom: 100%;
+    position: absolute;
+}
+/* 저장된 여행지 버튼 */
+#savedSpotText{
+    width: auto;
+    height: 10%;
+    font-family: 'KoPubDotumLight';
+    background-color: #45b8d5;
+    color: #ffffff;
+    font-size: 12px;
+}
+/* 로그인 영역 */
+.login{
+    font-size: 0px;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+    margin-left: 35%;
+    margin-top: 1.2%;
+    margin-bottom: 100%;
+    position: absolute;
+    display: inline-block;
+}
+/* 로그인 버튼 */
+#loginButton{
+    width: auto;
+    white-space: nowrap;
+    font-family: 'KoPubDotumLight';
+    background-color: #45b8d5;
+    color: #ffffff;
+    font-size: 12px;
+    text-align: center;
+    border: 0.5px #ffffff solid;
+    border-radius: 5px;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 8%;
+    padding-top: 8%;
+    display: inline-block;
+}
+
+/* 텍스트 영역 */
+#textSpace{
+    font-size: 0px;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+    width: 100%;
+    height: 8%;
+}
+/* 나에게로 떠나는 여행 영역 */
+#forMeSpace{
+    width: 100%;
+    height: 40%;
+    margin-top: 5%;
+}
+/* 네모 영역 */
+.square{
+    width: 35%;
+    height: 100%;
+    float: left;
+    display: inline-block;
+}
+/* 네모 */
+.texture{
+    width: 100%;
+    height: 12%;
+    margin-top: 3%;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+}
+/* 텍스트 영역 */
+#forMe{
+    text-align: center;
+    width: 30%;
+    height: 100%;
+    float: left;
+    display: inline-block;
+}
+/* 텍스트 */
+#forMe p{
+    font-family: "KoPubDotum";
+    font-weight: bold;
+    color: #878787;
+    font-size: 17px;
+}
+
+/* 여행지 영역 */
+#spotSpace{
+    width: 100%;
+    height: 83%;
+}
+/* 여행지 사진 영역 */
+#travelImageSpace{
+    width: 100%;
+    height: 57%;
+    margin-bottom: 3%;
+    border-radius: 5px;
+    position: relative;
+}
+/* 이미지 영역 */
+#imageSpace{
+   width: 100%;
+   height: 100%;
+   border-radius: 5px;
+  background-image: url("../images/defaultbigsize.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+ }
+#imageSpace img{
+    width: 100%;
+    height: 100%;
+  border-radius: 5px;
+}
+/* 체크 영역 */
+#checkSpace{
+    position: absolute;
+}
+/* 아이템 원 */
+.itemCircle{
+    position:absolute;
+    width: 3.5%;
+    margin-top: 0.8%;
+    margin-left: 0.8%;
+    background: url(../images/circle.png) no-repeat;
+    background-size: 100%;
+}
+/* 아이템 원 체크표시 */
+.itemCircle .checkCircle{
+    width: 70%;
+    height: 70%;
+    margin-bottom: 30%;
+    margin-top: 15%;
+    margin-left: 7%;
+}
+/* 여행지 상세정보 영역 */
+#detailSpace{
+    width: 100%;
+    height: 40%;
+    border-radius: 5px;
+    background-color: #ffffff;
+	box-shadow: 0 3px 7.5px 0.5px rgba(0, 0, 0, 0.19);
+}
+
+/* 제목 영역 */
+#titleSpace{
+    width: 100%;
+    height: 20%;
+    margin-bottom: 4%;
+    position: relative;
+}
+#title{
+    width: 100%;
+    font-size: 20px;
+    position: absolute;
+    color: #656565;
+    font-family: "KoPubDotum";
+    font-weight: bold;
+    bottom: 0;
+    margin-left: 5%;
+}
+/* 내용 영역 */
+#contentSpace{
+    width: 100%;
+    height: 58%;
+}
+
+.nameContentSpace{
+    width: 10%;
+    height: 100%;
+    margin-right: 3%;
+
+    position: relative;
+}
+
+.whiteSpace{
+    width: 100%;
+    height: 2%;
+}
+#moneySpace{
+    width: 90%;
+    height: 32%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+#infoSpace{
+    width: 90%;
+    height: 32%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+#addressSpace{
+    width: 90%;
+    height: 32%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.contentNameSpace{
+    width: 12%;
+    height: 100%;
+    margin-right: 2%;
+    display: inline-block;
+    float: left;
+}
+.contentNameSpace button{
+    width: 100%;
+    height: 70%;
+    margin-top: 4%;
+    color: #ffffff;
+    background-color: #7ad0e4;
+    border-radius: 5px;
+    font-size: 15px;
+}
+.contentValueSpace{
+    width: 86%;
+    height: 85%;
+    display: inline-block;
+    float: left;
+    border-bottom: 1px #f4f4f4 solid;
+    position: relative;
+}
+.contentValueSpace img{
+    width: 4%;
+    height: auto;
+    margin-left: 3%;
+    margin-right: 3%;
+    float: left;
+}
+#moneyText_spot{
+    color: #878787;
+    font-family: "NanumBarunGothic";
+    font-size: 15px;
+    display: inline-block;
+    float: left;
+    position: absolute;
+    bottom: 0;
+    transform: translate(0%, 40%)
+}
+.value{
+    color: #878787;
+    font-family: "NanumBarunGothic";
+    font-size: 15px;
+    display: inline-block;
+    float: left;
+    /*position: absolute;*/
+    bottom: 0;
+    left: 0;
+    /*transform: translate(28%, -50%);*/
+}
+
+.contentNameSpace button:focus {
+  outline: none !important;
+}
+
+/* 오른쪽 공백 */
+#whiteSpaceRight{
+    position: fixed;
+}
+/* 위 공백 */
+/*#upWhiteSpace{*/
+    /*width: 100%;*/
+    /*height: 33.5%;*/
+/*}*/
+/* 계산기 */
+/*#calcul{*/
+    /*width: 100%;*/
+    /*height: 40%;*/
+/*}*/
+/* 아래 공백 */
+#downWhiteSpace{
+    width: 100%;
+    height: 20%;
+}
+/* 탑 버튼 */
+#downWhiteSpace img{
+    position: absolute;
+    transform: translate(30%, -130%);
+    bottom: 0%;
+    width: 15%;
+    height: auto;
+}
+/* 계산기 영역 */
+/*#calculSpace{*/
+    /*margin-left: 18%;*/
+    /*margin-right: 18%;*/
+    /*width: 64%;*/
+    /*height: 100%;*/
+/*}*/
+/* 계산기 콘텐츠 */
+/*#calculContent{*/
+    /*width: 100%;*/
+    /*height: 90%;*/
+    /*background-color: #f9f9f9;*/
+    /*border-radius: 5px;*/
+    /*box-shadow: 0 3px 7.5px 0.5px rgba(0, 0, 0, 0.19);*/
+    /*margin-bottom: 10%;*/
+    /*position: relative;*/
+    /*!*padding-bottom: 3%;*!*/
+    /*padding-top: 13%;*/
+/*}*/
+/* 여행지 목록 */
+#spotList_spot
+{
+    width: 84%;
+    height: 80%;
+    margin-left: 8%;
+    margin-right: 8%;
+    border-bottom: 1.5px solid #cdcdcd;
+}
+/* 여행지 */
+.travelSpot{
+    width: 100%;
+    height: 18%;
+    margin-bottom: 12%;
+}
+.nameSpace{
+    width: 100%;
+    height: 32%;
+    margin-bottom: 3%;
+}
+.spotName{
+    width: 100%;
+    height: 100%;
+    font-size: 11px;
+}
+.numberSpace{
+    width: 69%;
+    height: 57%;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 3px 7.5px 0.5px rgba(0, 0, 0, 0.19);
+}
+.numberEqual{
+    margin-right: 5%;
+    margin-left: 10%;
+    margin-top: 3%;
+    color: #45b8d5;
+    height: 100%;
+    font-weight: bold;
+    display: inline-block;
+    float: left;
+}
+.numberResult{
+    margin-top: 3%;
+    display: inline-block;
+    float: left;
+}
+/* 결과 */
+/*.resultSpace{*/
+    /*width:66%;*/
+    /*height: 12%;*/
+    /*box-shadow: 0 3px 7.5px 0.5px rgba(0, 0, 0, 0.19);*/
+    /*background-color: #ffffff;*/
+    /*margin-left: 17%;*/
+    /*margin-top: 5%;*/
+    /*border-radius: 5px;*/
+/*}*/
+.result{
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+
+}
+.equal{
+    margin-left: 10%;
+    color: #45b8d5;
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 5%;
+    margin-right: 5%;
+}
+/* 버튼 공백 */
+/*.buttonWhiteSpace2{*/
+    /*width: 12%;*/
+    /*height: 100%;*/
+    /*display: inline-block;*/
+    /*float: left;*/
+/*}*/
+/* 여행 찾기 완료 영역 */
+/*#finishSpace{*/
+    /*width: 100%;*/
+    /*height: 11%;*/
+    /*display: inline-block;*/
+/*}*/
+/* 여행 찾기 완료 */
+/*#finish{*/
+    /*width: 76%;*/
+    /*height: 100%;*/
+    /*display: inline-block;*/
+    /*float: left;*/
+    /*color: #ffffff;*/
+    /*font-family: 'NanumBarunGothic';*/
+	/*border-radius: 5px;*/
+	/*background-color: #7ad0e4;*/
+    /*font-size: 13px;*/
+/*}*/

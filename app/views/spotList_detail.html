@@ -1,0 +1,151 @@
+<!--<link rel="stylesheet" href="styles/spotList_detail.css"/>-->
+<!-- 요소 -->
+<div id="wrapper">
+  <div id="bottom">
+    <!-- 왼쪽 공백 -->
+    <div id="whiteSpaceLeft"></div>
+    <!-- 왼쪽 공백 끝 -->
+    <!-- 콘텐츠 -->
+    <div id="content">
+      <!-- 텍스트 영역 -->
+      <div id="textSpace_spotL">
+        <!-- 나에게로 떠나는 여행 영역 -->
+        <div id="forMeSpace">
+          <!-- 네모 영역 -->
+          <div class="square">
+            <!-- 네모 -->
+            <div class="texture"></div>
+          </div>
+          <!-- 네모 영역 끝 -->
+          <!-- 텍스트 영역 -->
+          <div id="forMe">
+            <!-- 텍스트 -->
+            <p>{{name}}</p>
+          </div>
+          <!-- 텍스트 영역 끝 -->
+          <!-- 네모 영역 -->
+          <div class="square">
+            <!-- 네모 -->
+            <div class="texture"></div>
+          </div>
+          <!-- 네모 영역 끝 -->
+        </div>
+        <!-- 나에게로 떠나는 여행 영역 끝-->
+        <!-- 전체 삭제 영역-->
+        <div id="deleteAll">
+          <!-- 공백 영역 -->
+          <div id="deleteWhiteSpace"></div>
+          <!-- 공백 영역 끝 -->
+          <!-- 콘텐츠 영역 -->
+          <div id="deleteContent" ng-click="delspot();">
+            <!-- 텍스트 -->
+            <p id="deleteText">삭제</p>
+            <!-- 이미지 -->
+            <img id="trash" src="images/trash(gray).png">
+          </div>
+          <!-- 콘텐츠 영역 끝 -->
+        </div>
+        <!-- 전체 삭제 영역 끝 -->
+      </div>
+      <!-- 텍스트 영역 끝 -->
+      <!-- 목록 영역 -->
+      <div id="listSpace_spotL" >
+        <!-- 아이템 열 -->
+        <div class="itemRow" ng-repeat="spot in sspots track by $index" ng-if="$index % 2==0">
+          <!-- 아이템 영역 1 -->
+          <div class="itemSpace" ng-repeat="i in [$index ,$index+1]"  ng-if="sspots[i].contentid!==undefined">
+            <!-- 아이템 이미지 영역 -->
+
+
+
+
+            <!--과제 1 : ng-class를 이용한 코드 간결화-->
+            <div class="itemCircle_spotL"  ng-click="spotSelect(i);" ng-if="sspots[i].checked==undefined">
+              <img  class="checkCircle" src="images/circle.png">
+            </div>
+            <div class="itemCircle_spotL" ng-if="sspots[i].checked==true" ng-click="spotSelect(i);">
+              <!-- 체크표시 -->
+              <img class="checkCircle" src="images/check(blue).png" style="background: url('../images/circle.png');background-size: 100% 100%">
+            </div>
+            <div class="itemCircle_spotL" ng-if="sspots[i].checked==false" ng-click="spotSelect(i);">
+              <!-- 체크표시 -->
+              <img  class="checkCircle" src="images/circle.png">
+            </div>
+
+            <div class="itemImageSpace_spotL" >
+              <img src="{{sspots[i].firstimage}}" style="border-radius: 5px">
+            </div>
+            <!-- 아이템 이미지 영역 끝 -->
+            <!-- 아이템 텍스트 영역 -->
+            <div class="itemTextSpace" >
+              <!-- 여행지 이름 영역 -->
+              <div class="spotNameSpace">
+                <!-- 위 공백 -->
+                <div class="upWhiteSpace"></div>
+                <!-- 위 공백 끝 -->
+                <!-- 여행지 이름 -->
+                <div class="spotName">
+                  <!-- 버튼 영역 -->
+                  <div class="name">
+                    <button type="button" ng-if="sspots[i].type==0">여행지</button>
+                    <button type="button" ng-if="sspots[i].type==1">숙소</button>
+                  </div>
+                  <!-- 버튼 영역 끝 -->
+                  <!-- 텍스트 영역 -->
+                  <div class="text">
+                    <p>{{sspots[i].title}}</p>
+                  </div>
+                  <!-- 텍스트 영역 끝 -->
+                </div>
+                <!-- 여행지 이름 끝 -->
+                <!-- 아래 공백 -->
+                <div class="downWhiteSpace"></div>
+                <!-- 아래 공백 끝 -->
+              </div>
+              <!-- 여행지 이름 영역 끝 -->
+              <!-- 여행지 가격 영역 -->
+              <div class="spotMoneySpace">
+                <!-- 위 공백 -->
+                <div class="downWhiteSpace"></div>
+
+                <!-- 위 공백 끝 -->
+                <!-- 여행지 가격 -->
+                <div class="spotMoney">
+                  <!-- 버튼 영역 -->
+                  <div class="name">
+                    <button type="button">가격</button>
+                  </div>
+                  <!-- 버튼 영역 끝 -->
+                  <!-- 텍스트 영역 -->
+                  <div class="text">
+                    <p class="itemText">{{sspots[i].price}}</p>
+                    <div class="img">
+                      <img src="images/won.png">
+                    </div>
+                  </div>
+
+                  <div class="downWhiteSpace"></div>
+                  <!-- 텍스트 영역 끝 -->
+                </div>
+                <!-- 여행지 가격 끝 -->
+                <!-- 아래 공백 -->
+                <div class="upWhiteSpace"></div>
+                <!-- 아래 공백 끝 -->
+              </div>
+              <!-- 여행지 가격 영역 끝 -->
+            </div>
+            <!-- 아이템 텍스트 영역 끝 -->
+            <img class="blurImage" src="images/blur2.png" ng-click="spotDetail(sspots[i].contentid,sspots[i].type)">
+          </div>
+        </div>
+      </div>
+      <!-- 목록 영역 끝 -->
+    </div>
+    <!-- 콘텐츠 끝 -->
+    <!-- 오른쪽 공백 -->
+    <div id="whiteSpaceRight"></div>
+    <!-- 오른쪽 공백 끝 -->
+  </div>
+  <!-- 내용 끝 -->
+</div>
+<!-- 요소 끝 -->

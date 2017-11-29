@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+- '0.11'
+- '0.10'
+before_script:
+- npm install -g bower grunt-cli
+script: grunt
+deploy:
+  api_key:
+    secure: Teg107HtpIV31oSufnCkwGn/2fsseWq+xNYvoDrMDxC+zqa15coLtJov3uz/+dixxYsj7RvWT4QkIwFdHMiRRPYuMtpS77aCf0WrI/vuCYSJH6emJGdhbzJu1a4byJSg6BFrxjpd4AzylV6zI6W3OrFb3v032S9Ts7aL27mcvgU=
+  email: mhaligowski@gmail.com
+  provider: npm
+  on:
+    branch: master
+    repo: mhaligowski/grunt-google-cdnify

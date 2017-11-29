@@ -1,0 +1,91 @@
+<!-- 요소 -->
+
+
+<div id="wrapper">
+  <!-- 메인 -->
+  <div id="main">
+    <!-- 메인 이미지 -->
+    <div class="mainImage">
+      <!-- 이미지 -->
+      <img id="backImage" src="images/mainpage.png" style="border-radius: 0px">
+    </div>
+    <!-- 메인 이미지 끝 -->
+    <!-- 메인 텍스트 -->
+    <div class="mainText">
+      <!-- 텍스트 -->
+      <span id="backText">선선한 가을,<br>우리 함께 떠나볼까요?</span>
+    </div>
+    <!-- 메인 이미지 텍스트 끝 -->
+  </div>
+  <!-- 메인 끝 -->
+</div>
+<!-- 요소 끝 -->
+<!-- 공백 -->
+<div id="whiteSpace">
+  <!-- 버튼 세개 -->
+  <div id="threeButton">
+    <!-- 여행 타입 -->
+    <div id="type">
+      <!-- 여행 타입 select box -->
+      <select id="travelType" class="select" ng-model="options.cat1">
+        <option value="" disabled selected>여행 타입</option>
+        <option value="A01">자연</option>
+        <option value="A02">인문(문화/예술/역사)</option>
+        <option value="0">선택안함</option>
+      </select>
+
+    </div>
+    <!-- 여행 타입 끝 -->
+    <!-- 지역 선택 -->
+
+    <!--비어있는 상태-->
+
+
+    <!--자연코드 선택시-->
+
+    <!--인문코드 선택시-->
+    <div id="region">
+      <!-- 지역 선택 select box -->
+      <select id="regionSelect" class="select" ng-model="options.areaCode" value="">
+        <option value="" disabled selected >지역 선택</option>
+        <option value="1">서울</option>
+        <option value="2">인천</option>
+        <option value="3">대전</option>
+        <option value="4">대구</option>
+        <option value="5">광주</option>
+        <option value="6">부산</option>
+        <option value="7">울산</option>
+        <option value="8">세종특별자치시</option>
+        <option value="31">경기도</option>
+        <option value="32">강원도</option>
+        <option value="33">충청북도</option>
+        <option value="34">충청남도</option>
+        <option value="35">경상북도</option>
+        <option value="36">경상남도</option>
+        <option value="37">전라북도</option>
+        <option value="38">전라남도</option>
+        <option value="39">제주도</option>
+        <option value="0">선택안함</option>
+
+      </select>
+    </div>
+
+
+    <!-- 지역 선택 끝 -->
+    <!-- 나의 예산 -->
+    <div id="money">
+      <!-- 나의 예산 input -->
+      <input type="text" id="myMoney" placeholder="나의 예산" ng-model="options.money">
+    </div>
+    <!-- 나의 예산 끝 -->
+  </div>
+  <!-- 버튼 세개 끝 -->
+  <!-- 검색 버튼 -->
+  <div id="search">
+    <!-- 버튼 -->
+    <button type="button" id="searchButton" ng-click="test()">검색</button>
+  </div>
+  <!-- 검색 버튼 끝 -->
+</div>
+<!-- 공백 끝-->
+

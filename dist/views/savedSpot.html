@@ -1,0 +1,116 @@
+<link rel="stylesheet" href="styles/savedSpot.527439ee.css"/>
+
+<!-- 요소 -->
+<div id="wrapper">
+  <!-- 상위 바 -->
+  <div id="bottom">
+    <!-- 왼쪽 공백 -->
+    <div id="whiteSpaceLeft"></div>
+    <!-- 왼쪽 공백 끝 -->
+    <!-- 콘텐츠 -->
+    <div id="content">
+      <!-- 텍스트 영역 -->
+      <div id="textSpace_saved">
+        <!-- 나에게로 떠나는 여행 영역 -->
+        <div id="forMeSpace">
+          <!-- 네모 영역 -->
+          <div class="square">
+            <!-- 네모 -->
+            <div class="texture"></div>
+          </div>
+          <!-- 네모 영역 끝 -->
+          <!-- 텍스트 영역 -->
+          <div id="forMe">
+            <!-- 텍스트 -->
+            <p>저장된 여행지</p>
+          </div>
+          <!-- 텍스트 영역 끝 -->
+          <!-- 네모 영역 -->
+          <div class="square">
+            <!-- 네모 -->
+            <div class="texture"></div>
+          </div>
+          <!-- 네모 영역 끝 -->
+        </div>
+        <!-- 나에게로 떠나는 여행 영역 끝-->
+        <!-- 전체 삭제 영역-->
+        <div id="deleteAll">
+          <!-- 공백 영역 -->
+          <div id="deleteWhiteSpace"></div>
+          <!-- 공백 영역 끝 -->
+          <!-- 콘텐츠 영역 -->
+          <div id="deleteContent" ng-click="delCart()">
+            <!-- 텍스트 -->
+            <p id="deleteText">삭제</p>
+            <!-- 이미지 -->
+            <img id="trash" src="images/trash(gray).png">
+          </div>
+          <!-- 콘텐츠 영역 끝 -->
+        </div>
+        <!-- 전체 삭제 영역 끝 -->
+      </div>
+      <!-- 텍스트 영역 끝 -->
+      <!-- 목록 영역 -->
+
+      <div id="listSpace_saved">
+        <!-- 열 -->
+        <div class="row" ng-repeat="list in lists track by $index" ng-if="$index % 3 ==0">
+          <!-- 콘텐츠 1-->
+          <div class="item_saved" ng-repeat="i in [$index, $index+1, $index+2]" ng-if="lists[i] != null"
+               style="background: url({{lists[i].area[0].firstimage}}),url('images/defaultsmallsize.3c431783.png');background-size: auto auto ,100% 100%;background-repeat: no-repeat">
+            <!-- 아이템 원 끝 -->
+
+
+,
+            <div class="itemCircle_saved" ng-if="lists[i].checked==undefined" ng-click="listSelect(i);">
+              <!-- 체크표시 -->
+              <img class="checkCircle" src="images/circle.282ee581.png" style="display: none">
+            </div>
+
+            <div class="itemCircle_saved" ng-if="lists[i].checked==true" ng-click="listSelect(i);">
+              <!-- 체크표시 -->
+              <img class="checkCircle" src="images/check(blue).png" style="background: url('../images/circle.282ee581.png');background-size: 100% 100%">
+            </div>
+            <div class="itemCircle_saved" ng-if="lists[i].checked==false" ng-click="listSelect(i);">
+              <!-- 체크표시 -->
+              <img class="checkCircle" src="images/circle.282ee581.png">
+            </div>
+
+
+            <!-- 아이템 이미지 영역 -->
+            <div class="itemImageSpace_saved" ng-click="listDetail(lists[i].num)">
+
+
+              <!-- 텍스트 -->
+              <div class="itemText">
+                <!-- 예산 텍스트 영역 -->
+                <div class="moneySpace">
+                  <p class="title">예산&nbsp;&nbsp;</p>
+                  <p class="moneyValue">{{prices[i]}}</p>
+                </div>
+                <!-- 예산 텍스트 영역 끝 -->
+                <!-- 여행지 타입 영역 -->
+                <div class="travelType">
+                  <p class="title"> {{titles[i]}} </p>
+                  <p class="typeValue"></p>
+                </div>
+                <!-- 여행지 타입 영역 끝 -->
+              </div>
+              <!-- 이미지 -->
+              <img class="itemImage_saved" src="images/blur.4fd8879d.png">
+            </div>
+            <!-- 아이템 이미지 영역 끝 -->
+          </div>
+        </div>
+
+      </div>
+      <!-- 목록 영역 끝 -->
+    </div>
+    <!-- 콘텐츠 끝 -->
+    <!-- 오른쪽 공백 -->
+    <div id="whiteSpaceRight_saved"></div>
+    <!-- 오른쪽 공백 끝 -->
+  </div>
+  <!-- 내용 끝 -->
+</div>
+<!-- 요소 끝 -->

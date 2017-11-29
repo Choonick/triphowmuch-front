@@ -1,0 +1,422 @@
+
+<!--<link rel="stylesheet" href="styles/mainselectDomi.2667020a.css"/>-->
+
+
+<style>
+
+</style>
+<!-- 요소 -->
+<div id="wrapper">
+  <!-- 상위 바 -->
+  <!-- 내용 -->
+  <div id="bottom">
+    <!-- 왼쪽 공백 -->
+    <div id="whiteSpaceLeft"></div>
+    <!-- 왼쪽 공백 끝 -->
+    <!-- 콘텐츠 -->
+    <div id="content">
+      <!-- 조건 영역 -->
+      <div id="conditionSpace">
+        <!-- 조건 1 영역 -->
+        <div id="conditionOne">
+          <!-- 버튼 내용 영역 -->
+          <div id="buttonContent">
+            <!-- 여행 타입 영역 -->
+            <div class="twoButton">
+              <!-- 여행 타입_대분류 -->
+              <div id="bigTravelType">
+                <!-- 대분류 select box -->
+                <select id="bigType" class="select" ng-model="options.cat1">
+                  <option value="" disabled selected>여행 타입-대분류</option>
+                  <option value="0">선택안함</option>
+                  <option value="A01">자연</option>
+                  <option value="A02">인문(문화/예술/역사)</option>
+                </select>
+              </div>
+              <!-- 여행 타입_대분류 끝 -->
+              <!-- 여행 타입_중분류 -->
+              <div id="middleTravelType" ng-if="options.cat1==null">
+                <!-- 중분류 select box -->
+                <select id="middleType" class="select" ng-model="options.cat2">
+                  <option value="" disabled selected>여행 타입-중분류</option>
+                </select>
+              </div>
+
+              <div id="middleTravelType" ng-if="options.cat1==='A01'">
+                <!-- 중분류 select box -->
+                <select id="middleType" class="select" ng-model="options.cat2">
+                  <option value="" disabled selected>여행 타입-중분류</option>
+                  <option value="A0101">자연관광지</option>
+                  <option value="A0102">관광자원</option>
+                  <option value="0">선택안함</option>
+                </select>
+              </div>
+
+              <div id="middleTravelType" ng-if="options.cat1==='A02'">
+                <!-- 중분류 select box -->
+                <select id="middleType" class="select" ng-model="options.cat2">
+                  <option value="" disabled selected>여행 타입-중분류</option>
+                  <option value="A0201">역사관광지</option>
+                  <option value="A0202">휴양관광지</option>
+                  <option value="A0203">체험관광지</option>
+                  <option value="A0204">산업관광지</option>
+                  <option value="A0205">건축/조형물</option>
+                  <option value="A0206">문화시설</option>
+                  <option value="0">선택안함</option>
+                </select>
+              </div>
+
+              <!-- 여행 타입_중분류 끝 -->
+            </div>
+            <!-- 여행 타입 영역 끝 -->
+            <!-- 지역 선택 영역 -->
+            <div class="twoButton">
+              <!-- 지역 선택_대분류 -->
+              <div id="bigRegionType">
+                <!-- 지역선택_대분류 select box -->
+                <select id="bigRegion" class="select" ng-model="options.areaCode">
+                  <option value="" disabled selected>지역 선택-대분류</option>
+                  <option id="test" value="1">서울</option>
+                  <option value="2">인천</option>
+                  <option value="3">대전</option>
+                  <option value="4">대구</option>
+                  <option value="5">광주</option>
+                  <option value="6">부산</option>
+                  <option value="7">울산</option>
+                  <option value="8">세종특별자치시</option>
+                  <option value="31">경기도</option>
+                  <option value="32">강원도</option>
+                  <option value="33">충청북도</option>
+                  <option value="34">충청남도</option>
+                  <option value="35">경상북도</option>
+                  <option value="36">경상남도</option>
+                  <option value="37">전라북도</option>
+                  <option value="38">전라남도</option>
+                  <option value="39">제주도</option>
+                  <option value="0">선택안함</option>
+                </select>
+              </div>
+              <!-- 지역 선택_대분류 끝 -->
+              <!-- 지역 선택_중분류 -->
+              <div id="middleRegionType" ng-if="options.areaCode==null">
+                <!-- 지역선택_중분류 select box -->
+                <select id="middleRegion" class="select" ng-model="options.sigunguCode">
+                  <option value="" disabled selected>지역 선택-중분류</option>
+                </select>
+              </div>
+
+              <div id="middleRegionType" ng-repeat="rg in regions" ng-if="options.areaCode==rg.region">
+                <!-- 지역선택_중분류 select box -->
+                <select id="middleRegion" class="select" ng-model="options.sigunguCode">
+                  <option value="" disabled selected>지역 선택-중분류</option>
+                  <option value="{{$index+1}}" ng-repeat="gu in rg.sub">{{gu}}</option>
+                </select>
+              </div>
+              <!-- 지역 선택_중분류 끝 -->
+            </div>
+            <!-- 지역 선택 영역 끝 -->
+            <!-- 나의 예산 영역 -->
+            <div class="twoButton">
+              <!-- 나의 예산 입력 텍스트 영역 -->
+
+              <div id="inputMoneyText" >
+
+                <!-- 텍스트 -->
+                <p id="moneyText">나의 예산 입력</p>
+              </div>
+
+              <div id="inputMoney">
+                <!-- input -->
+                <input id="inputText" type="text" ng-model="options.money">
+                <!-- 원 -->
+                <p id="won">원</p>
+              </div>
+              <!-- 나의 예산 입력 input 끝 -->
+            </div>
+            <!-- 나의 예산 영역 끝 -->
+          </div>
+          <!-- 버튼 내용 영역 끝 -->
+          <!-- 공백 영역 -->
+          <div id="buttonWhiteSpace">
+            <!-- 공백 1 -->
+            <div class="buttonWhiteSpace"></div>
+            <!-- 공백 1 끝 -->
+            <!-- 공백 2 -->
+            <div class="buttonWhiteSpace"></div>
+            <!-- 공백 2 끝 -->
+            <!-- 버튼 영역 -->
+            <div class="buttonWhiteSpace">
+              <!-- 다시 선택 버튼 공백 -->
+              <div id="reSelectWhiteSpace"></div>
+              <!-- 다시 선택 버튼 공백 끝 -->
+              <!-- 다시 선택 버튼 영역 -->
+              <div id="reSelectButtonSpace">
+                <!-- 버튼 -->
+                <button type="button" id="reSelectButton" ng-click="newSearch(options)">다시 선택</button>
+              </div>
+              <!-- 다시 선택 버튼 영역 끝 -->
+            </div>
+            <!-- 버튼 영역 끝 -->
+          </div>
+          <!-- 공백 영역 끝 -->
+        </div>
+        <!-- 조건 1 영역 끝 -->
+        <!-- 조건 2 영역 -->
+        <div id="conditionTwo">
+          <!-- 버튼 내용 영역 -->
+          <div id="buttonContentTwo">
+            <!-- 숙소 영역 -->
+
+            <!-- 숙소 영역 끝 -->
+            <!-- 여행지 영역 -->
+            <div id="spotSpace_main">
+              <!-- 버튼 -->
+              <button type="button" id="spot" ng-click="clTrip();">
+                여행지
+              </button>
+            </div>
+            <!-- 여행지 영역 끝 -->
+
+            <div id="domiSpace">
+              <!-- 버튼 -->
+              <button type="button" id="domi" ng-click="clDomi();">
+                숙소
+              </button>
+            </div>
+          </div>
+
+
+          <!-- 버튼 내용 영역 끝 -->
+        </div>
+        <!-- 조건 2 영역 끝 -->
+      </div>
+      <!-- 조건 영역 끝 -->
+      <!-- 정렬 영역 -->
+      <!--<div>-->
+      <div id="sort">
+        <p id="text">예산에 맞춘 {{kinds}} 추천</p>
+        <!-- 텍스트 영역 -->
+        <div id="textSpace">
+
+        </div>
+        <!-- 텍스트 영역 끝 -->
+        <!-- 정렬 영역 -->
+        <div id="sortSpace">
+          <!-- 정렬 공백 영역 -->
+          <div id="sortWhiteSpace"></div>
+          <!-- 정렬 공백 영역 끝 -->
+          <!-- 정렬 텍스트 영역 -->
+          <div id="sortTextSpace">
+            <!-- 오름차순 영역 -->
+            <div id="ascSpace">
+              <!-- 버튼 -->
+              <button type="button" id="asc" ></button>
+            </div>
+            <!-- 오름차순 영역 끝 -->
+            <!-- 기호 영역 -->
+            <div class="space">
+              <!-- 텍스트 -->
+              <p class="spaceText"></p>
+            </div>
+            <!-- 기호 영역 끝 -->
+            <!-- 내림차순 영역 -->
+            <div id="descSpace">
+              <!-- 버튼 -->
+              <button type="button" id="desc"></button>
+            </div>
+            <!-- 내림차순 영역 끝 -->
+          </div>
+          <!-- 정렬 텍스트 영역 끝 -->
+        </div>
+        <!-- 정렬 영역 끝 -->
+      </div>
+      <!--정렬 영역 끝-->
+      <!--목록 영역-->
+      <div id="listSpace" ng-if="domi===true">
+        <!-- 열 -->
+        <div class="row" ng-repeat="domi in domis track by $index" ng-if="$index % 3 ==0">
+          <!-- 콘텐츠 1-->
+          <div class="item" style="background: url({{domis[i].firstimage}}),url('images/defaultsmallsize.3c431783.png'); background-size: auto auto,100% 100%; background-repeat: no-repeat;"
+               ng-repeat="i in [$index, $index+1,$index+2]" ng-if="domis[i].contentid != undefined">
+
+            <!-- 아이템 원 -->
+
+
+
+            <!--과제 1 : ng-class를 이용한 코드 간결화-->
+            <div class="itemCircle" ng-if="domis[i].checked == undefined" ng-click="domiSelect(domi,i);">
+              <img class="checkCircle" src="images/circle.282ee581.png" >
+            </div>
+
+
+            <div class="itemCircle" ng-if="domis[i].checked==true" ng-click="domiSelect(domi,i);">
+              <!-- 체크표시 -->
+              <img class="checkCircle" src="images/check(blue).png" style="background: url('../images/circle.282ee581.png');background-size: 100% 100%">
+            </div>
+            <div class="itemCircle" ng-if="domis[i].checked==false" ng-click="domiSelect(domi,i);">
+              <!-- 체크표시 -->
+              <img class="checkCircle" src="images/circle.282ee581.png">
+            </div>
+
+
+            <!-- 아이템 원 끝 -->
+            <!-- 아이템 이미지 영역 -->
+            <div class="itemImageSpace" ng-click="domiDetail(domis[i].contentid)">
+              <!-- 텍스트 -->
+              <p class="itemText">{{domis[i].title}}</p>
+              <!-- 이미지 -->
+              <img class="itemImage" src="images/blur.4fd8879d.png">
+            </div>
+            <!-- 아이템 이미지 영역 끝 -->
+          </div>
+
+
+        </div>
+
+      </div>
+
+      <div id="listSpace" ng-if="trip===true">
+        <!-- 열 -->
+        <div class="row" ng-repeat="spot in spots track by $index" ng-if="$index % 3 ==0">
+          <!-- 콘텐츠 1-->
+          <div class="item"
+               ng-repeat="i in [$index, $index+1, $index+2]" ng-if="spots[i].contentid != undefined"
+               ng-class="{'default':spots[i].firstimage == null}"
+               style="background: url({{spots[i].firstimage}}),url('images/defaultsmallsize.3c431783.png'); background-size: auto auto ,100% 100%; background-repeat: no-repeat;">
+            <!-- 아이템 원 -->
+
+
+            <!--과제 1 : ng-class를 이용한 코드 간결화-->
+            <div class="itemCircle" ng-if="spots[i].checked == undefined" ng-click="spotSelect(spot,i);">
+              <img class="checkCircle" src="images/circle.282ee581.png" >
+            </div>
+            <div class="itemCircle" ng-if="spots[i].checked==true" ng-click="spotSelect(spot,i);">
+              <!-- 체크표시 -->
+              <img class="checkCircle" src="images/check(blue).png" style="background: url('images/circle.282ee581.png');background-size: 100% 100%">
+            </div>
+            <div class="itemCircle" ng-if="spots[i].checked==false" ng-click="spotSelect(spot,i);">
+              <!-- 체크표시 -->
+              <img class="checkCircle" src="images/circle.282ee581.png">
+            </div>
+
+
+            <!-- 아이템 원 끝 -->
+            <!-- 아이템 이미지 영역 -->
+            <div class="itemImageSpace" ng-click="spotDetail(spots[i].contentid)">
+              <!-- 텍스트 -->
+              <p class="itemText">{{spots[i].title}}</p>
+              <!-- 이미지 -->
+              <img class="itemImage" src="images/blur.4fd8879d.png">
+            </div>
+            <!-- 아이템 이미지 영역 끝 -->
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+
+      <div style="text-align: center">
+        <ul class="pagination">
+          <!--<div id="paging" class="row">-->
+          <!--</div>-->
+        </ul>
+      </div>
+
+      <!--목록 영역 끝-->
+    </div>
+    <!--</div>-->
+    <!-- 콘텐츠 끝 -->
+    <!-- 오른쪽 공백 -->
+    <div id="whiteSpaceRight">
+      <!-- 위 공백 -->
+      <div id="upWhiteSpace"></div>
+      <!-- 위 공백 끝 -->
+      <!-- 계산기 부분-->
+      <div id="calcul">
+        <!-- 계산기 영역 -->
+        <div id="calculSpace">
+          <!-- 계산기 콘텐츠 -->
+          <div id="calculContent">
+            <!-- 여행지 목록 -->
+            <div id="spotList">
+
+
+              <!-- 여행지 -->
+              <div class="travelSpot" ng-repeat="spot in spots" ng-if="spot.checked===true">
+                <div class="nameSpace">
+                  <p class="spotName">{{spot.title}}</p>
+                </div>
+                <div class="numberSpace">
+                  <p class="numberEqual">
+                    -
+                  </p>
+                  <p class="numberResult">
+                    {{spot.price}}
+                  </p>
+                </div>
+              </div>
+
+              <div class="travelSpot" ng-repeat="domi in domis" ng-if="domi.checked===true">
+                <div class="nameSpace">
+                  <p class="spotName">{{domi.title}}</p>
+                </div>
+                <div class="numberSpace">
+                  <p class="numberEqual">
+                    -
+                  </p>
+                  <p class="numberResult">
+                    {{domi.price}}
+                  </p>
+                </div>
+              </div>
+
+
+
+              <!-- 여행지 끝 -->
+            </div>
+            <!-- 여행지 목록 끝 -->
+            <!-- 결과 -->
+            <div class="resultSpace">
+              <p class="equal">
+                =
+              </p>
+              <p class="result">
+                {{spots.allprice}}
+              </p>
+            </div>
+            <!-- 결과 끝 -->
+          </div>
+          <!-- 계산기 콘텐츠 끝 -->
+          <!-- 여행 찾기 완료 영역 -->
+          <div id="finishSpace">
+            <!-- 버튼 공백 -->
+            <div class="buttonWhiteSpace2"></div>
+            <!-- 버튼 공백 끝 -->
+            <!-- 버튼 -->
+            <button id="finish" ng-click="goCart();">여행 찾기 완료</button>
+            <!-- 버튼 끝 -->
+            <!-- 버튼 공백 -->
+            <div class="buttonWhiteSpace2"></div>
+            <!-- 버튼 공백 끝 -->
+          </div>
+          <!-- 여행 찾기 완료 영역 끝 -->
+        </div>
+        <!-- 계산기 영역 끝 -->
+      </div>
+      <!-- 계산기 부분 끝 -->
+      <!-- 탑 버튼 -->
+
+
+      <img id="top" src="images/top.c18b7634.png">
+      <!-- 탑 버튼 끝 -->
+    </div>
+    <!-- 오른쪽 공백 끝 -->
+  </div>
+  <!-- 내용 끝 -->
+</div>
+<!-- 요소 끝 -->
+<!--</body>-->
+<!--</html>-->

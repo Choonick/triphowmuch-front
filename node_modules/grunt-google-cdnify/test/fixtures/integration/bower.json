@@ -1,0 +1,6 @@
+{
+  "name": "my-awesome-app",
+  "dependencies": {
+    "jquery": "2.0.2"
+  }
+}
